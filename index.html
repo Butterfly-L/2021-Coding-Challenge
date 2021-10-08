@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake it up! 30 Web Animation Proposals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/dist/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/dist/styles/tailwind.css">
+</head>
+
+<body>
+    <main class="bg-yellow-300 py-16 px-4 md:p-28 relative overflow-hidden w-full">
+        <svg class="absolute left-12 md:left-3/4 top-1 md:top-auto" xmlns="http://www.w3.org/2000/svg" width="386"
+            height="49" viewBox="0 0 386 49">
+            <animate id="1" xlink:href="#rectangle_1" attributeName="width" from="0" to="231" dur="0.5s"
+                fill="freeze" />
+            <animate xlink:href="#rectangle_2" attributeName="width" from="0" to="231" dur="0.5s" fill="freeze"
+                begin="1.end" />
+
+            <rect id="rectangle_1" width="231" height="17" fill="#02a696" />
+            <rect id="rectangle_2" width="231" height="17" transform="translate(155 32)" fill="#f24b4b" />
+        </svg>
+        <div class="hover:animate-shake cursor-pointer">
+            <h1 class="md:text-6xl text-4xl font-bold text-gray-700 animate-rushIn">
+                Shake it up!</h1>
+            <h1 class="md:text-6xl text-4xl font-bold text-gray-700">30 Web Animation Proposals</h1>
+        </div>
+        <h1 class="md:text-4xl text-3xl font-bold text-gray-500">30-day Coding Challenge 2021</h1>
+        <div class="flex flex-wrap items-end w-full xl:w-2/5 md:w-3/5 mt-4">
+            <div class="tag tag-select mr-2 mt-2 cursor-pointer" data-value="HTML">#HTML</div>
+            <div class="tag tag-select mr-2 mt-2 cursor-pointer" data-value="CSS">#CSS</div>
+            <div class="tag tag-select mr-2 mt-2 cursor-pointer" data-value="SCSS">#SCSS</div>
+            <div class="tag tag-select mr-2 mt-2 cursor-pointer" data-value="JavaScript">#JavaScript</div>
+            <div class="tag tag-select mr-2 mt-2 cursor-pointer" data-value="SVG">#SVG</div>
+            <div class="tag tag-select mr-2 mt-2 cursor-pointer" data-value="Canvas">#Canvas</div>
+            <div class="tag tag-select mr-2 mt-2 cursor-pointer" data-value="D3.js">#D3.js</div>
+            <div class="tag tag-select mr-2 mt-2 cursor-pointer" data-value="Three.js">#Three.js</div>
+            <div class="tip text-xl text-blue-700 relative ml-auto transform"><span
+                    class="absolute -top-1 -left-5 animate-point">&#8598</span>Click
+                to filter
+                articles</div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between w-full">
+            <p class="w-full md:w-3/5 z-10 mt-4 text-xl md:text-2xl text-gray-500">
+                30 animation proposals for website using one or more of front-end languages and libraries.
+                </br>
+                30-day Coding Challenge is an event held by top IT media in Taiwan. All participants are required to
+                publish
+                one article related to selected topic everyday for 30 days.
+            </p>
+            <div class="z-10 flex flex-col w-full md:w-2/5 ml-0 md:ml-10 mt-4 md:mt-0">
+                <button class="btn place-self-start transition-all"><a
+                        href="https://ithelp.ithome.com.tw/users/20140247/ironman/4150" target=”_blank”>Read All
+                        Articles</a></button>
+                <div class="ml-auto mt-4 flex">
+                    <button class="btn place-self-start transition-all" target=”_blank”><a
+                            href="https://github.com/Butterfly-L/2021-Coding-Challenge">View Source
+                            Codes</a></button>
+                    <div class="blank"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ball-wrapper flex flex-col absolute bottom-10 left-10">
+            <div class="ball animate-bounce"></div>
+            <div class="ball mt-2 animate-bounce"></div>
+            <div class="ball mt-2 animate-bounce"></div>
+        </div>
+        <div class="triangle absolute"></div>
+    </main>
+    <section class="w-10/12 md:w-8/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="container-odd w-full mt-16 auto-rows-min grid md:grid-cols-1 gap-4 md:gap-12"></div>
+        <div class="container-even w-full auto-rows-min grid md:grid-cols-1 gap-4 md:gap-12"></div>
+    </section>
+    <footer class="bg-yellow-300 w-full text-center py-2 mt-16">© 2021 Copyright Rachel &#129419;</footer>
+
+    <script type="module" src="/dist/scripts/index.min.js"></script>
+
+</body>
+
+</html>

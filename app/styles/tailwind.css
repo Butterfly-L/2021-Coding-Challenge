@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 100vw solid transparent;
+  border-bottom: 30vh solid white;
+  bottom: 0;
+  left: 0;
+}
+
+.btn {
+  box-shadow: 5px 5px grey;
+  margin: 0px 0 5px 0px;
+  @apply text-xl md:text-3xl bg-blue-600 text-white px-4 py-2 transition-all;
+}
+
+.btn:hover {
+  box-shadow: none;
+  margin: 5px 0 0 5px;
+}
+
+.card {
+  margin: 25px 0px 0px 5px;
+
+  @apply w-full p-4 rounded-xl shadow-md animate-fadeIn transition-all;
+}
+
+.card:hover {
+  margin: 20px 5px 5px 0;
+  box-shadow: 5px 5px grey;
+}
+
+.card_upper {
+  @apply flex border-b-2 pb-2 border-white w-full;
+}
+
+@layer components {
+  .tag {
+    @apply border-4 border-white px-0.5 text-white text-lg transition-all;
+  }
+}
+
+.selected {
+  @apply border-blue-700 text-blue-700;
+}
+
+.ball {
+  @apply rounded-full bg-white w-4 h-4;
+}
+

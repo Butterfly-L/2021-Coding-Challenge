@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document</title><style>svg {
+            width: 70%;
+            height: 80vh;
+        }
+
+        .info {
+            width: 70%;
+            text-align: center;
+            color: #69b3a2;
+            font-weight: 400;
+            font-size: 40px;
+        }</style></head><body><svg></svg><!-- Load d3.js --><script src="https://d3js.org/d3.v6.js"></script><script>// The svg
+        const width = window.innerWidth * 0.7;
+        const height = window.innerHeight * 0.6;
+        const svg = d3.select("svg")
+
+        // Map and projection
+
+        const projection = d3.geoMercator()
+            .scale(400) //scale：設定地圖縮放倍率
+            .translate([width / 4, height / 1.5])
+
+        let geoGenerator = d3.geoPath().projection(projection);
+        //d3.geoPath：將投影資料轉換為 path 的路徑
+
+        d3.json("https://raw.githubusercontent.com/codeforgermany/click_that_hood/master/public/data/africa.geojson")
+            .then(function (data) {
+                // Draw the map
+                svg.append("g")
+                    .selectAll("path")
+                    .data(data.features)
+                    .enter()
+                    .append("path")
+                    .attr("fill", "#69b3a2")
+                    .attr("d", geoGenerator)
+                    .style("stroke", "#fff")
+                    .on('mouseover', handleMouseOver)
+                    .on('mouseout', function (d, i) {
+                        d3.select(this)
+                            .attr('fill', '#69b3a2');
+                        d3.selectAll('text').text('');
+                    })
+
+            })
+
+        function handleMouseOver(e, d) {
+            let centroid = geoGenerator.centroid(d);
+
+
+
+            svg.append('text')
+                .text(d.properties.name)
+                .style("font-size", 30)
+                .style("font-weight", "bold")
+                .style("fill", "black")
+                .style('display', 'inline')
+                .attr('transform', 'translate(' + centroid + ')');
+
+            d3.select(this)
+                .attr('fill', 'yellow')
+
+        }</script></body></html>

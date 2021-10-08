@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js 3D Model</title>
+</head>
+
+<body>
+    "Eastern Orthodox Church" (https://skfb.ly/o7uZD) by Viesturs Dille is licensed under Creative Commons Attribution
+    (http://creativecommons.org/licenses/by/4.0/).
+    <script src="../scripts/three/three.min.js"></script>
+    <script src="../scripts/three/GLTFLoader.js"></script>
+    <script>
+        let container, scene, camera, renderer, showCase
+
+        function init() {
+            container = document.querySelector('.container');
+
+            // create scene
+            scene = new THREE.Scene();
+            // scene.background = new THREE.color(0xdddddd);
+
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
+            camera.position.set(8, 0, 100);
+
+            const hlight = new THREE.AmbientLight(0x404040, 10);
+            scene.add(hlight);
+
+            const light = new THREE.DirectionalLight(0xffffff, 100);
+            light.position.set(10, 30, 30);
+            scene.add(light);
+
+            renderer = new THREE.WebGLRenderer({
+                antialias: true, //make it smoother when zoom in 
+                alpha: true, //can add background
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            document.body.appendChild(renderer.domElement);
+
+
+            // load GLTF
+            let loader = new THREE.GLTFLoader();
+
+            loader.load('../assets/3dmodel/scene.gltf', function (gltf) {
+                scene.add(gltf.scene);
+                renderer.render(scene, camera);
+                house = gltf.scene.children[0];
+                animate();
+            });
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            house.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
