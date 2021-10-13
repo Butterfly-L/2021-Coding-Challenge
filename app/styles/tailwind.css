@@ -51,3 +51,14 @@
   @apply rounded-full bg-white w-4 h-4;
 }
 
+.box_btn {
+  margin-right: 10px;
+}
+
+.box_btn:hover {
+  margin-right: 0px;
+}
+
+.box_btn:hover .arrow {
+  margin-left: 10px;
+}

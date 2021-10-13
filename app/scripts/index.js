@@ -13,6 +13,8 @@ import { data } from './articles.min.js';
         const colorLength = color.length;
 
         function htmlFactory(colorNum, item, tagHtml) {
+            let demoLinkHtml = item.demoLink ? `<a class="box_btn text-xl md:text-2xl font-bold text-gray-700 transition-all" href="${item.demoLink}" target=”_blank”>Demo <span class="transition-all arrow">&rarr;</span></a>` : ''
+
             return `
             <div class="card ${color[colorNum]} place-self-start">
             <div class="card_upper">
@@ -25,8 +27,11 @@ import { data } from './articles.min.js';
                 ${tagHtml}
             </div>
             <div class="flex justify-between mt-4">
-                <a class="box_btn text-xl md:text-2xl font-bold text-gray-700 transition-all" href="${item.readLink}" target=”_blank”>Read <span class="transition">&rarr;</span></a>
-                <a class="box_btn text-xl md:text-2xl font-bold text-gray-700 transition-all" href="${item.demoLink}" target=”_blank”>Demo <span class="transition">&rarr;</span></a>
+                <a class="box_btn text-xl md:text-2xl font-bold text-gray-700 transition-all" href="${item.readLink}" target=”_blank”>
+                Read 
+                <span class="transition-all arrow">&rarr;</span>
+                </a>
+                ${demoLinkHtml}
             </div>
             </div>`
         }

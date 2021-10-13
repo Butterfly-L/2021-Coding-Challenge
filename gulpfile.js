@@ -45,6 +45,7 @@ function scssTask(){
 function processTailwind() {
     return src('app/styles/tailwind.css')
             .pipe(postcss())
+            .pipe(cssmin())
             .pipe(dest('dist/styles',{sourcemaps: '.'}))
 }
 
