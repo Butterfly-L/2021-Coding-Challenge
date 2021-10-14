@@ -23,7 +23,7 @@ import { data } from './articles.min.js';
                 <div class="ball ml-2"></div>
             </div>
             <h3 class="text-2xl md:text-4xl my-4 text-gray-700 font-bold">${item.title}</h3>
-            <div class="flex">
+            <div class="flex flex-wrap">
                 ${tagHtml}
             </div>
             <div class="flex justify-between mt-4">
@@ -50,7 +50,7 @@ import { data } from './articles.min.js';
                 if (widowWidth < 768) {
                     colorNumEven = colorNumEven === colorLength ? 0 : colorNumEven;
                     item.tag.forEach(unit => {
-                        tagHtml += `<div class="tag mr-2">#${unit}</div>`
+                        tagHtml += `<div class="tag tag-select mr-2 mt-2" data-value="${unit}">#${unit}</div>`
                     })
                     evenHtml += htmlFactory(colorNumEven, item, tagHtml);
                     colorNumEven++
@@ -60,7 +60,7 @@ import { data } from './articles.min.js';
                 if (widowWidth > 768 && index % 2 === 1) {
                     colorNumOdd = colorNumOdd === colorLength ? 0 : colorNumOdd;
                     item.tag.forEach(unit => {
-                        tagHtml += `<div class="tag mr-2">#${unit}</div>`
+                        tagHtml += `<div class="tag tag-select mr-2 mt-2" data-value="${unit}">#${unit}</div>`
                     })
 
                     oddHtml += htmlFactory(colorNumOdd, item, tagHtml);
@@ -70,7 +70,7 @@ import { data } from './articles.min.js';
                 if (widowWidth > 768 && index % 2 === 0) {
                     colorNumEven = colorNumEven === colorLength ? 0 : colorNumEven;
                     item.tag.forEach(unit => {
-                        tagHtml += `<div class="tag mr-2">#${unit}</div>`
+                        tagHtml += `<div class="tag tag-select mr-2 mt-2" data-value="${unit}">#${unit}</div>`
                     })
                     evenHtml += htmlFactory(colorNumEven, item, tagHtml);
                     colorNumEven++
@@ -95,6 +95,8 @@ import { data } from './articles.min.js';
             let isSameNode = selected?.isSameNode(this)
             
             tip.style.display = 'none';
+
+            console.log('select Tag');
 
             this.classList.toggle('selected');
             if(!isSameNode) selected?.classList.remove('selected');

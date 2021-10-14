@@ -1,5 +1,5 @@
 const data = [
-    // TODO: 1.第一個字大寫，2. tips 3.兩個demo link
+    // TODO: 1.第一個字大寫
 {
     title: 'Day0 SCSS Intro',
     tag: ['CSS', 'SCSS'],
@@ -175,6 +175,25 @@ const data = [
     readLink: 'https://ithelp.ithome.com.tw/articles/10281206',
     demoLink: 'https://codepen.io/rachel-liaw/pen/XWgzLQw?editors=0010'
 },
+{
+    title: 'Day28 Interactive Map',
+    tag: ['D3.js'],
+    readLink: 'https://ithelp.ithome.com.tw/articles/10281523',
+    demoLink: ''
+},
+{
+    title: 'Day29 Animate Tips to Direct Users',
+    tag: ['HTML', 'Tailwind'],
+    readLink: '',
+    demoLink: ''
+},
+{
+    title: 'Day30 Make a Animated Menu!',
+    tag: ['HTML', 'Tailwind'],
+    readLink: '',
+    demoLink: ''
+},
+
 ]
 
 export {data};
