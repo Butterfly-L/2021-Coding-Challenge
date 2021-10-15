@@ -184,13 +184,13 @@ const data = [
 {
     title: 'Day29 Animate Tips to Direct Users',
     tag: ['HTML', 'Tailwind'],
-    readLink: '',
+    readLink: 'https://ithelp.ithome.com.tw/articles/10281830',
     demoLink: ''
 },
 {
     title: 'Day30 Make a Animated Menu!',
     tag: ['HTML', 'Tailwind'],
-    readLink: '',
+    readLink: 'https://rachel-liaw.github.io/2021-Coding-Challenge/',
     demoLink: ''
 },
 
